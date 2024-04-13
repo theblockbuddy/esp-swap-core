@@ -1,0 +1,43 @@
+{
+  "name": "dxswap-core",
+  "version": "0.3.6",
+  "files": [
+    "contracts",
+    "build"
+  ],
+  "engines": {
+    "node": ">=10"
+  },
+  "devDependencies": {
+    "@types/chai": "^4.2.6",
+    "@types/mocha": "^5.2.7",
+    "arb-ethers-web3-bridge": "^0.7.3",
+    "chai": "^4.2.0",
+    "dotenv": "^8.2.0",
+    "ethereum-waffle": "^2.4.1",
+    "ethereumjs-util": "^6.2.0",
+    "ethers": "^4.0.45",
+    "mocha": "^6.2.2",
+    "prettier": "^1.19.1",
+    "rimraf": "^3.0.0",
+    "solc": "0.5.16",
+    "truffle-flattener": "^1.4.4",
+    "ts-node": "^8.5.4",
+    "@truffle/hdwallet-provider": "^1.2.6"
+  },
+  "scripts": {
+    "lint": "yarn prettier ./test/*.ts --check",
+    "lint:fix": "yarn prettier ./test/*.ts --write",
+    "clean": "rimraf ./build/",
+    "precompile": "yarn clean",
+    "compile": "waffle .waffle.json",
+    "pretest": "yarn compile",
+    "test": "mocha",
+    "prepublishOnly": "yarn test",
+    "flattener": "./scripts/flattener.sh"
+  },
+  "license": "AGPL-3.0-or-later",
+  "dependencies": {
+    "typescript": "^3.9.5"
+  }
+}
