@@ -1,5 +1,5 @@
 {
-  "name": "esp-swap-core",
+  "name": "dxswap-core",
   "version": "0.3.6",
   "files": [
     "contracts",
